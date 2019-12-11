@@ -3,10 +3,11 @@ import express from 'express';
 // import FileSync from 'lowdb/adapters/FileSync';
 import {getInstagramCount, getTwitterCount} from './lib/scraper';
 import db from './lib/db';
+import './lib/cron';
 
 const app = express();
 
-console.log(db);
+// console.log(db);
 
 app.get('/scrape', async(req, res, next) =>{
     console.log('scraping!');
