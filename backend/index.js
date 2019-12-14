@@ -27,9 +27,16 @@ app.get('/scrape', async(req, res, next) =>{
     res.json({iCount, tCount});
 });
 
+app.get('/data', async(req,res,next)=>{
+   //get the scrape data
+    const data = db.value();
+    res.json(data);
+    //respond with json
+});
+
 var server = app.listen(2093, () => {
     // console.log(deets);
-    console.log(`Example app running on port ${server.address().port}`)
+    console.log(`Example app running on port http://localhost:${server.address().port}`)
 });
 // console.log(getHTML());
 
